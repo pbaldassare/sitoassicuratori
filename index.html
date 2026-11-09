@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Quietanza | Software per assicuratori</title>
+<title>Agenda Assicurapp | Software per assicuratori</title>
 <meta name="description" content="Il software per assicuratori che gestisce agenda, lead, polizze, contenuti social e assistenza ai clienti su WhatsApp, app e email.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Quietanza | Software per assicuratori">
+<meta property="og:title" content="Agenda Assicurapp | Software per assicuratori">
 <meta property="og:description" content="Agenda, lead, polizze con Assicurapp, contenuti social e assistenza con l'IA in un unico software.">
 <meta name="theme-color" content="#1746c7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1b3f9f" media="(prefers-color-scheme: dark)">
@@ -82,12 +82,15 @@ mark { background: linear-gradient(var(--mark), var(--mark)) no-repeat; color: v
 /* Testata */
 header { background: var(--band); color: var(--on-band); --btn-bg: var(--mark); --btn-fg: var(--on-mark); }
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: .875rem; }
-.logo { display: inline-flex; align-items: center; gap: .5rem; font: 800 1.5rem var(--display); letter-spacing: -.03em; text-decoration: none; }
+.logo { display: inline-flex; flex: none; align-items: center; gap: .5rem; font: 800 1.5rem var(--display); letter-spacing: -.03em; text-decoration: none; white-space: nowrap; }
 .logo svg { width: 1.5rem; height: 1.5rem; flex: none; }
 nav { display: flex; gap: 1.5rem; font-size: .9375rem; margin-left: auto; }
 nav a { text-decoration: none; white-space: nowrap; padding-block: .5rem; }
-@media (min-width: 56.0625rem) { header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; } }
-@media (max-width: 56rem) {
+/* Il nome è lungo: logo, menu e pulsante stanno su una riga solo sopra 68rem, sotto il menu passa alla seconda riga. */
+@media (min-width: 68.0625rem) { header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; } }
+/* Su telefono il pulsante è già sotto il titolo, nella testata non entrerebbe accanto al logo. */
+@media (max-width: 32rem) { header .btn { display: none; } }
+@media (max-width: 68rem) {
   header .wrap { flex-wrap: wrap; gap: .25rem 1rem; padding-block: .75rem 0; }
   header .btn { padding: .5rem .875rem; font-size: .875rem; }
   nav { order: 3; width: 100%; margin: 0; overflow-x: auto; scrollbar-width: none; }
@@ -278,10 +281,6 @@ footer p { max-width: 44rem; }
   .faq-index { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
   .faq-index a { text-decoration: underline; padding-block: .5rem; }
 }
-@media (max-width: 22.5rem) {
-  header .logo { font-size: 1.25rem; }
-  header .btn { padding-inline: .625rem; font-size: .8125rem; }
-}
 @media (max-width: 40rem) {
   .board { grid-template-columns: minmax(0, 1fr); }
   .phone { transform: none; }
@@ -293,7 +292,7 @@ footer p { max-width: 44rem; }
   tbody td:nth-of-type(2) { padding: .5rem .75rem; border-radius: 6px; background: var(--tint); }
   tbody td::before { display: block; font: 500 .75rem var(--mono); color: var(--muted); }
   tbody td:nth-of-type(1)::before { content: "Senza"; }
-  tbody td:nth-of-type(2)::before { content: "Con Quietanza"; }
+  tbody td:nth-of-type(2)::before { content: "Con Agenda Assicurapp"; }
 }
 </style>
 </head>
@@ -311,7 +310,7 @@ footer p { max-width: 44rem; }
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#main"><svg aria-hidden="true"><use href="#i-logo"/></svg>Quietanza</a>
+    <a class="logo" href="#main"><svg aria-hidden="true"><use href="#i-logo"/></svg>Agenda Assicurapp</a>
     <nav aria-label="Vantaggi">
       <a href="#agenda">Agenda</a>
       <a href="#lead">Lead</a>
@@ -529,7 +528,7 @@ footer p { max-width: 44rem; }
       <section class="scroll" tabindex="0" aria-label="Confronto tra lavoro manuale e software">
         <table>
           <thead>
-            <tr><th scope="col">Attività</th><th scope="col">Senza</th><th scope="col">Con Quietanza</th></tr>
+            <tr><th scope="col">Attività</th><th scope="col">Senza</th><th scope="col">Con Agenda Assicurapp</th></tr>
           </thead>
           <tbody>
             <tr><th scope="row">Appuntamenti</th><td>Telefonate e messaggi per trovare un orario</td><td>Il cliente prenota da solo</td></tr>
@@ -562,7 +561,7 @@ footer p { max-width: 44rem; }
       <div class="faq-groups">
         <div class="faq-group" id="faq-software">
           <h3>Il software</h3>
-          <details><summary>Che cos'è Quietanza?</summary><p>È un software per assicuratori che riunisce in un solo strumento agenda, lead, polizze e preventivi, contenuti social e assistenza ai clienti.</p></details>
+          <details><summary>Che cos'è Agenda Assicurapp?</summary><p>È un software per assicuratori che riunisce in un solo strumento agenda, lead, polizze e preventivi, contenuti social e assistenza ai clienti.</p></details>
           <details><summary>A chi è rivolto?</summary><p>A chi lavora nelle assicurazioni e ogni giorno deve seguire clienti, appuntamenti, polizze e scadenze.</p></details>
           <details><summary>Quali problemi risolve?</summary><p>Riduce il tempo speso per fissare appuntamenti, cercare contatti tra chat ed email, inviare documenti, pubblicare sui social e rispondere alle stesse domande.</p></details>
           <details><summary>Quali canali collega?</summary><p>LinkedIn e gli altri canali social, i siti web, WhatsApp, l'email e l'app del cliente.</p></details>
@@ -670,7 +669,7 @@ footer p { max-width: 44rem; }
 
 <footer>
   <div class="wrap">
-    <span class="logo"><svg aria-hidden="true"><use href="#i-logo"/></svg>Quietanza</span>
+    <span class="logo"><svg aria-hidden="true"><use href="#i-logo"/></svg>Agenda Assicurapp</span>
     <p>Il software per assicuratori. Nomi e dati negli esempi sono di fantasia. Assicurapp è un marchio dei rispettivi titolari.</p>
   </div>
 </footer>
