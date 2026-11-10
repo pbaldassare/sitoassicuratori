@@ -268,6 +268,8 @@ footer { background: var(--deep); color: var(--on-deep-soft); font-size: .875rem
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 2rem; padding-block: 2rem; }
 footer .logo { color: var(--on-deep); font-size: 1.25rem; }
 footer p { max-width: 44rem; }
+footer .legal { flex-basis: 100%; max-width: none; }
+footer .legal a { color: var(--on-deep); text-underline-offset: .2em; }
 
 @media (max-width: 56rem) {
   .hero-grid, .feature, .head-split, .faq-layout { grid-template-columns: minmax(0, 1fr); }
@@ -671,6 +673,7 @@ footer p { max-width: 44rem; }
   <div class="wrap">
     <span class="logo"><svg aria-hidden="true"><use href="#i-logo"/></svg>Agenda Assicurapp</span>
     <p>Il software per assicuratori. Nomi e dati negli esempi sono di fantasia. Assicurapp è un marchio dei rispettivi titolari.</p>
+    <p class="legal"><a href="privacy.html">Privacy</a> · <a href="privacy.html#cookie">Cookie</a> · Questo sito non usa cookie.</p>
   </div>
 </footer>
 

@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 html = (ROOT / "index.html").read_text(encoding="utf-8")
+privacy = (ROOT / "privacy.html").read_text(encoding="utf-8")
 ids = re.findall(r'\bid="([^"]+)"', html)
 errors = []
 
@@ -19,8 +20,8 @@ for path in sorted(set(re.findall(r'(?:url\("|href=")(fonts/[^"]+)"', html))):
         errors.append(f"file mancante: {path}")
 for url in sorted(set(re.findall(r'(?:src|href)="(https?://[^"]+)"|url\("?(https?://[^")]+)', html))):
     errors.append(f"risorsa esterna, passa i dati dei visitatori a terzi: {url[0] or url[1]}")
-for placeholder in ("example.com",):
-    if placeholder in html:
+for placeholder in ("example.com", "DA COMPLETARE"):
+    if placeholder in html + privacy:
         errors.append(f"segnaposto ancora presente: {placeholder}")
 
 print("\n".join(errors) or "OK")
